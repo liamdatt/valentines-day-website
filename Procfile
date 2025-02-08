@@ -1,0 +1,1 @@
+web: gunicorn valentine_project.wsgi:application 

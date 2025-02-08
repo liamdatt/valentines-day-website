@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+    <script>
+        // Define all static paths once
+        const STATIC_URL = "{% static '' %}";
+        const GAME_ASSETS = {
+            dino: "{% static 'love_site/images/game-assets/img/dino.png' %}",
+            cactus1: "{% static 'love_site/images/game-assets/img/cactus1.png' %}",
+            cactus2: "{% static 'love_site/images/game-assets/img/cactus2.png' %}",
+            cactus3: "{% static 'love_site/images/game-assets/img/cactus3.png' %}"
+        };
+        const HEADS = {
+            partner: "{% static 'love_site/images/heads/partner-head.png' %}",
+            you: "{% static 'love_site/images/heads/you-head.png' %}"
+        };
+        const BACKGROUND_PATHS = {
+            set1: [
+                "{% static 'love_site/images/backgrounds/1.jpg' %}",
+                "{% static 'love_site/images/backgrounds/2.jpg' %}",
+                "{% static 'love_site/images/backgrounds/3.jpg' %}",
+                "{% static 'love_site/images/backgrounds/4.jpg' %}"
+            ],
+            set2: [
+                "{% static 'love_site/images/backgrounds/5.jpg' %}",
+                "{% static 'love_site/images/backgrounds/6.jpg' %}",
+                "{% static 'love_site/images/backgrounds/7.jpg' %}",
+                "{% static 'love_site/images/backgrounds/8.jpg' %}"
+            ],
+            set3: [
+                "{% static 'love_site/images/backgrounds/9.jpg' %}",
+                "{% static 'love_site/images/backgrounds/10.jpg' %}",
+                "{% static 'love_site/images/backgrounds/11.jpg' %}",
+                "{% static 'love_site/images/backgrounds/12.jpg' %}"
+            ]
+        };
+    </script>
+</head>
+<body>
+    <div class="background-columns">
+        <!-- First Set -->
+        <div class="photo-column set-1" style="background-image: url({% static 'love_site/images/backgrounds/1.jpg' %});"></div>
+        <div class="photo-column set-1" style="background-image: url({% static 'love_site/images/backgrounds/2.jpg' %});"></div>
+        <div class="photo-column set-1" style="background-image: url({% static 'love_site/images/backgrounds/3.jpg' %});"></div>
+        <div class="photo-column set-1" style="background-image: url({% static 'love_site/images/backgrounds/4.jpg' %});"></div>
+        
+        <!-- Second Set -->
+        <div class="photo-column set-2" style="background-image: url({% static 'love_site/images/backgrounds/5.jpg' %});"></div>
+        <div class="photo-column set-2" style="background-image: url({% static 'love_site/images/backgrounds/6.jpg' %});"></div>
+        <div class="photo-column set-2" style="background-image: url({% static 'love_site/images/backgrounds/7.jpg' %});"></div>
+        <div class="photo-column set-2" style="background-image: url({% static 'love_site/images/backgrounds/8.jpg' %});"></div>
+        
+        <!-- Third Set -->
+        <div class="photo-column set-3" style="background-image: url({% static 'love_site/images/backgrounds/9.jpg' %});"></div>
+        <div class="photo-column set-3" style="background-image: url({% static 'love_site/images/backgrounds/10.jpg' %});"></div>
+        <div class="photo-column set-3" style="background-image: url({% static 'love_site/images/backgrounds/11.jpg' %});"></div>
+        <div class="photo-column set-3" style="background-image: url({% static 'love_site/images/backgrounds/12.jpg' %});"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load all sets of images
+            const loadImages = (set, paths) => {
+                paths.forEach((path, index) => {
+                    const img = new Image();
+                    img.src = path;
+                    img.onerror = () => {
+                        console.error(`Failed to load image from set ${set}: ${path}`);
+                    };
+                    img.onload = () => {
+                        console.log(`Successfully loaded image from set ${set}: ${path}`);
+                    };
+                });
+            };
+
+            // Load all three sets
+            loadImages('set1', BACKGROUND_PATHS.set1);
+            loadImages('set2', BACKGROUND_PATHS.set2);
+            loadImages('set3', BACKGROUND_PATHS.set3);
+        });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const img = document.querySelector('.test-image');
+        if (img) {
+            img.onload = () => {
+                document.getElementById('image-status').textContent = "Loaded successfully!";
+                console.log('Image dimensions:', img.naturalWidth + 'x' + img.naturalHeight);
+            };
+            img.onerror = () => {
+                document.getElementById('image-status').textContent = "Failed to load!";
+            };
+        }
+    });
+    </script>
+    <h1 class="title">Happy Valentine's Day My Love</h1>
+
+    <div class="letter-container">
+        <div class="envelope" onclick="toggleLetter()">
+            <div class="wax-seal"></div>
+        </div>
+            <div class="letter-content">
+                <div class="handwritten-text">
+                    <p>Dear Vritti,</p>
+                    
+                    <p>Happy Valentine's Day my darling. Can you believe this is our 4th Valentine's Day together. Every year more and more I've seen you grow into the smart, beautiful, loving, funny person that I get to call my girlfriend. I wish you could see what I see. How you just light up a room and how doing everything is 100x more fun with you. (Bro's glazing)</p>
+                
+                    <p>I could have never imagined how an innocent crush turned into a friendship then into the relationship we have now. Our relationship is so special to me. I think that the way we just go together is so rare and we really were made for each other. I love you so much and I know you love me. I know it's been hard recently and we haven't been ourselves. I did so many things that changed the dynamic of our relationship and really put us in our first real rough patch.  I don't think I could ever let you know how sorry I am for everything. I look back at it now and I see so many things I did wrong and how much better things could have been for us.</p>
+                
+                    <p>Vritti I love you so much and I don't want to lose you over this. I know you still love me and you don't want me out of your life. We can get back what we had and get back to being us. I know this semester we were off to a rough start but I know we can finish strong. I know we are strong enough to get through this.</p>
+                
+                    <p>Happy Valentine's Day again my love, this year I wanted to celebrate our relationship and maybe put us one step towards getting back to being us. I know I probably used all of your attention span reading this letter so don't worry there are games to play and a video to watch. I love you baby and I want you to be happy and whatever happens I understand.</p>
+                    
+                    <p style="text-align: right; margin-top: 2rem;">
+                        Liam<br>
+                        <span style="font-size: 0.8em;">❤</span>
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="activities">
+        <div class="activity" onclick="window.startTrivia(); return false;">Relationship Trivia</div>
+        <div class="activity" onclick="window.startGame(); return false;">Catch Me Game</div>
+        <div class="activity" onclick="openVideo(); return false;">Liam and Vritti</div>
+    </div>
+    
+    <!-- Game container for "Catch Me Game" -->
+    <div class="game-container" style="display: none;">
+        <canvas id="board"></canvas>
+        <div id="game-over" style="display: none;">
+            <h2>Caught You!</h2>
+            <button onclick="startGame()">Play Again</button>
+        </div>
+    </div>
+
+    <!-- VIDEO POPUP -->
+    <div id="video-popup" class="popup" style="display: none; z-index: 2000;">
+        <div class="popup-content video-content">
+            <button class="close-button" onclick="closeVideo()">✕</button>
+            <div class="video-container">
+                <video id="couple-video" controls>
+                    <source src="{% static 'love_site/videos/couple.mov' %}" type="video/quicktime">
+                    <source src="{% static 'love_site/videos/couple.mov' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRIVIA POPUP -->
+    <div id="trivia-popup" class="popup" style="display: none; z-index: 2000;">
+        <div class="popup-content">
+            <button class="close-button" onclick="closeTrivia()">✕</button>
+            <div id="trivia-container">
+                <div class="trivia-score">Score: <span id="trivia-score">0</span></div>
+                <div class="trivia-question"></div>
+                <div class="trivia-choices"></div>
+                <div id="trivia-message" class="hidden">❤ Great job! Keep going! ❤</div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    /* Full screen popup overlay */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 240, 245, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    /* Close button styles */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff69b4;
+      border: none;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    /* Trivia Styles */
+    .trivia-score {
+        font-size: 24px;
+        color: #ff69b4;
+        text-align: center;
+        margin: 20px 0;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .trivia-question {
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        margin: 30px 0;
+        padding: 20px;
+        background: #fff0f5;
+        border-radius: 10px;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .trivia-choices {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .trivia-choice {
+        padding: 15px 20px;
+        background: white;
+        border: 2px solid #ff69b4;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 20px;
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+    }
+
+    .trivia-choice:hover {
+        background: #fff0f5;
+        transform: translateY(-2px);
+    }
+
+    .trivia-choice.correct {
+        background: #90EE90;
+        border-color: #228B22;
+    }
+
+    .trivia-choice.incorrect {
+        background: #FFB6C1;
+        border-color: #DC143C;
+    }
+
+    #trivia-message {
+        text-align: center;
+        color: #ff69b4;
+        font-size: 24px;
+        margin-top: 20px;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    #trivia-message.hidden {
+        display: none;
+    }
+
+    /* Video popup styles */
+    .video-content {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    #couple-video {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        border-radius: 10px;
+    }
+    </style>
+
+    <!-- Add this before the script.js include -->
+    <script>
+        // Define video functions globally
+        function openVideo() {
+            const popup = document.getElementById('video-popup');
+            const video = document.getElementById('couple-video');
+            if (popup && video) {
+                popup.style.display = 'flex';
+            }
+        }
+
+        function closeVideo() {
+            const popup = document.getElementById('video-popup');
+            const video = document.getElementById('couple-video');
+            if (popup && video) {
+                popup.style.display = 'none';
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+
+        // Add click outside to close
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoPopup = document.getElementById('video-popup');
+            if (videoPopup) {
+                videoPopup.addEventListener('click', function(e) {
+                    if (e.target === videoPopup) {
+                        closeVideo();
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="{% static 'js/script.js' %}?v=2" defer></script>
+
+</body>
+</html>
