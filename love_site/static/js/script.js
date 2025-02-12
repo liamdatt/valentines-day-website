@@ -2,62 +2,122 @@
 const TRIVIA_QUESTIONS = [
     {
         question: "First Party that we both went to:",
-        choices: ["ZimiSehRiva", "FOF", "Chill", "I Love Soca"],
-        correctAnswer: 0
+        choices: ["FOF", "I Love Soca", "ZimiSehRiva", "Chill"],
+        correctAnswer: 2
     },
     {
         question: "Day we started our streak:",
-        choices: ["December 17, 2018", "September 30, 2018", "March 12, 2019", "June 12, 2019"],
+        choices: ["March 12, 2019", "December 17, 2018", "September 30, 2018", "June 12, 2019"],
         correctAnswer: 1
     },
     {
         question: "First time we had sex:",
-        choices: ["July 15, 2021", "June 30, 2021", "July 30, 2021", "June 12, 2021"],
-        correctAnswer: 0
+        choices: ["June 30, 2021", "July 30, 2021", "June 12, 2021", "July 15, 2021"],
+        correctAnswer: 3
     },
     {
         question: "When did Liam first start liking Vritti:",
-        choices: ["Grade 10", "Grade 11", "Grade 12", "Grade 13"],
+        choices: ["Grade 11", "Grade 13", "Grade 10", "Grade 12"],
         correctAnswer: 2
     },
     {
         question: "How many times did Gabe hit Sonam's Car:",
-        choices: ["Two", "Zero", "One", "Three"],
-        correctAnswer: 0
+        choices: ["One", "Three", "Two", "Zero"],
+        correctAnswer: 2
     },
     {
         question: "When did Vritti first start liking Liam:",
-        choices: ["Grade 12", "Grade 13", "First Year", "Still waiting"],
-        correctAnswer: 0
+        choices: ["First Year", "Grade 13", "Grade 12", "Still waiting"],
+        correctAnswer: 2
     },
     {
         question: "Who was the teacher of the first form class we shared:",
-        choices: ["Miss Nicholson", "Miss Atkins", "Miss Webster", "Miss Cuthburt"],
-        correctAnswer: 0
+        choices: ["Miss Webster", "Miss Atkins", "Miss Nicholson", "Miss Cuthburt"],
+        correctAnswer: 2
     },
     {
         question: "Who taught the first class we had together:",
         choices: ["Miss Reynolds", "Miss Webster", "Mr Davis", "Miss Gardener"],
-        correctAnswer: 1
+        correctAnswer: 0
     },
     {
         question: "Who changed the most after High school:",
-        choices: ["Luna (#ALLY)", "Pierre", "Miles", "David"],
-        correctAnswer: 0
+        choices: ["David", "Miles", "Pierre", "Luna (#ALLY)"],
+        correctAnswer: 3
     },
     {
         question: "In first year, when we went out for Halloween, which one of my friends terrorized your friends:",
-        choices: ["Jack", "Matt", "Cal", "Chris"],
-        correctAnswer: 0
+        choices: ["Chris", "Cal", "Jack", "Matt"],
+        correctAnswer: 2
     },
     {
         question: "When we went to Canada where was the first place we met up:",
-        choices: ["Eaton Center", "Dorm", "Avi's apartment", "Airport"],
-        correctAnswer: 0
+        choices: ["Airport", "Dorm", "Eaton Center", "Avi's apartment"],
+        correctAnswer: 2
     },
     {
         question: "First Date in Jamaica:",
-        choices: ["Tacbar", "Cru", "100", "Fridays"],
+        choices: ["Cru", "100", "Fridays", "Tacbar"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is Vritti's funniest phrase ever said:",
+        choices: ["A who dat Nutty Buddy", "Tell dem again Nutty Buddy", "A Your Buddy so Nutty", "Shut up Stupid Nigga"],
+        correctAnswer: 1
+    },
+    {
+        question: "What was James Husband's banger line:",
+        choices: ["Guys i bought a 2k printer", "My names James", "thats seh u sein when bc u up to 😂", "thats sein u seh when u up to bc 😂"],
+        correctAnswer: 3
+    },
+    {
+        question: "Who was Liam's favourite roommate from Evelyn Wiggins:",
+        choices: ["Sydney", "Armelle", "Joyline", "Nolan"],
+        correctAnswer: 2
+    },
+    {
+        question: "Most racist roommate from Evelyn Wiggins:",
+        choices: ["Sydney", "Sydney", "Sydney", "Sydney"],
+        correctAnswer: 0
+    },
+    {
+        question: "Did avinash lose his virginity the first week in Canada:",
+        choices: ["Yes", "N/A", "No", "N/A"],
+        correctAnswer: 2
+    },
+    {
+        question: "Who is Kar Kar:",
+        choices: ["The Help", "Family", "The Dog", "Stranger"],
+        correctAnswer: 1
+    },
+    {
+        question: "Which of your friends do I think is the funniest:",
+        choices: ["Kashish", "Demi", "Diya", "Joyline"],
+        correctAnswer: 1
+    },
+    {
+        question: "Is Liam a good investment advisor?",
+        choices: ["N/A", "Yes, Hes the best", "This nigga lose me money", "N/A"],
+        correctAnswer: 2
+    },
+    {
+        question: "Liam's Favourite Date this year:",
+        choices: ["Korean BBQ", "Chat Bar", "Sza Movie", "Greta"],
+        correctAnswer: 0
+    },
+    {
+        question: "Liam's Most Fun Date last year:",
+        choices: ["Christmas Fair", "CNE", "Center Island", "Interstellar"],
+        correctAnswer: 2
+    },
+    {
+        question: "Sauciest Date last year:",
+        choices: ["CNE", "Drake Hotel", "Birthday Drinks", "Strangers at the bar 🥵"],
+        correctAnswer: 3
+    },
+    {
+        question: "Who did Kiran think was the funniest at the beach that day:",
+        choices: ["Liam", "Liam", "Liam", "Liam"],
         correctAnswer: 0
     }
 ];
