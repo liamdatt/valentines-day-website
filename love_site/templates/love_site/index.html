@@ -13,7 +13,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
+    <title>Happy Third Aniversary!</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
     <script>
@@ -108,7 +108,7 @@
         }
     });
     </script>
-    <h1 class="title">Happy Valentine's Day My Love</h1>
+    <h1 class="title">Happy Anniversary My Darling</h1>
 
     <div class="letter-container">
         <div class="envelope" onclick="toggleLetter()">
@@ -116,18 +116,16 @@
         </div>
             <div class="letter-content">
                 <div class="handwritten-text">
-                    <p>Dear Vritti,</p>
+                    <p>Happy Anniversary Vritti,</p>
                     
-                    <p>Happy Valentine's Day my darling. Can you believe this is our 4th Valentine's Day together. Every year more and more I've seen you grow into the smart, beautiful, loving, funny person that I get to call my girlfriend. I wish you could see what I see. How you just light up a room and how doing everything is 100x more fun with you. (Bro's glazing)</p>
+                    <p>I know things aren't certain between us right now but regardless I wouldn't trade these 3 years for anything. Thank you so much for being the best girlfriend and teaching me what it is like to love someone and what it is like to be loved by someone.</p>
                 
-                    <p>I could have never imagined how an innocent crush turned into a friendship then into the relationship we have now. Our relationship is so special to me. I think that the way we just go together is so rare and we really were made for each other. I love you so much and I know you love me. I know it's been hard recently and we haven't been ourselves. I did so many things that changed the dynamic of our relationship and really put us in our first real rough patch.  I don't think I could ever let you know how sorry I am for everything. I look back at it now and I see so many things I did wrong and how much better things could have been for us.</p>
+                    <p>I am really happy about how we left things and I just want to keep working to get back to feeling like us. I know this week we shared can't erase everything that we have been through but it really made me realize how much I care about you and how much I just want to make you smile everyday. I'm so sorry our relationship recently has been so heavy and tense and I'm so sorry that it got to that point in the first place.</p>
                 
-                    <p>Vritti I love you so much and I don't want to lose you over this. I know you still love me and you don't want me out of your life. We can get back what we had and get back to being us. I know this semester we were off to a rough start but I know we can finish strong. I know we are strong enough to get through this.</p>
-                
-                    <p>Happy Valentine's Day again my love, this year I wanted to celebrate our relationship and maybe put us one step towards getting back to being us. I know I probably used all of your attention span reading this letter so don't worry there are games to play. I love you baby and I want you to be happy and whatever happens I understand.</p>
+                    <p>I love you so much my darling and thank you for helping me grow and mature into who I am today. Don't worry even tho this letter wasn't as long, I still made you some games. I made you your own word game lmao. It's kinda like hangman but u get a theme and three words related to the theme and u guess them by picking letters 1 by 1. There's also an unlimited Wordle and a mini golf game. I know the last games weren't that good so I wanted to make some games you might actually play. Hope you enjoy and I love you so much and thank you for the last 3 years my darling.</p>
                     
                     <p style="text-align: right; margin-top: 2rem;">
-                        Liam<br>
+                        - Liam<br>
                         <span style="font-size: 0.8em;">❤</span>
                     </p>
                 </div>
@@ -137,7 +135,10 @@
     <div class="activities">
         <div class="activity" onclick="window.startTrivia(); return false;">Relationship Trivia</div>
         <div class="activity" onclick="window.startGame(); return false;">Liam Escape</div>
-        <div class="activity" onclick="openVideo(); return false;">Liam and Vritti</div>
+        <div class="activity" onclick="window.openVideo(); return false;">Liam and Vritti</div>
+        <div class="activity" onclick="window.openWordGame(); return false;">Word Game</div>
+        <div class="activity" onclick="window.openWordle(); return false;">Wordle</div>
+        <div class="activity" id="golf-button">Golf Game</div>
     </div>
     
     <!-- Game container for "Catch Me Game" -->
@@ -173,6 +174,76 @@
                 <div class="trivia-choices"></div>
                 <div id="trivia-message" class="hidden">❤ Great job! Keep going! ❤</div>
             </div>
+        </div>
+    </div>
+
+    <!-- Word Game Popup -->
+    <div id="word-game-popup" class="popup" style="display: none; z-index: 2000;">
+        <div class="popup-content">
+            <button class="close-button" onclick="closeWordGame()">✕</button>
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Wordle Game Popup -->
+    <div id="wordle-popup" class="popup" style="display: none; z-index: 2000;">
+        <div class="popup-content">
+            <button class="close-button" onclick="closeWordle()">✕</button>
+            <div id="container">
+                <div id="grid">
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+                <div id="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Golf Game Popup -->
+    <div id="golf-popup" class="popup" style="display: none; z-index: 2000;">
+        <div class="popup-content">
+            <button class="close-button" onclick="window.closeGolf()">✕</button>
+            <canvas id="golfCanvas" width="800" height="600"></canvas>
         </div>
     </div>
 
@@ -292,6 +363,70 @@
         max-height: 80vh;
         border-radius: 10px;
     }
+
+    /* Wordle Game Styles */
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    #grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .cell {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 2px solid #ff69b4;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .cell-green {
+        background-color: #6aaa64;
+        color: white;
+        border-color: #6aaa64;
+    }
+
+    .cell-yellow {
+        background-color: #c9b458;
+        color: white;
+        border-color: #c9b458;
+    }
+
+    .cell-gray {
+        background-color: #787c7e;
+        color: white;
+        border-color: #787c7e;
+    }
+
+    #message {
+        margin-top: 20px;
+        font-size: 24px;
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        color: #ff69b4;
+    }
+
+    /* Golf Game Styles */
+    #golfCanvas {
+        background-color: #90EE90;
+        border: 2px solid #ff69b4;
+        border-radius: 10px;
+    }
     </style>
 
     <!-- Add this before the script.js include -->
@@ -328,7 +463,52 @@
         });
     </script>
 
-    <script src="{% static 'js/script.js' %}?v=2" defer></script>
+    <!-- Move all script tags to the end of body and ensure proper order -->
+    <script src="{% static 'js/script.js' %}?v=2"></script>
+    <script src="{% static 'js/word_game.js' %}?v=1"></script>
+    <script src="{% static 'js/wordle.js' %}?v=1"></script>
+    <script src="{% static 'js/golf.js' %}?v=8"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const golfButton = document.getElementById('golf-button');
+            if (!golfButton) {
+                console.error('Golf button not found');
+                return;
+            }
+
+            // Clean up any existing game state
+            if (typeof window.cleanupGolf === 'function') {
+                window.cleanupGolf();
+            }
+
+            golfButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const popup = document.getElementById('golf-popup');
+                if (!popup) {
+                    console.error('Golf popup not found');
+                    return;
+                }
+
+                popup.style.display = 'flex';
+                // Wait for the popup to be visible and DOM to settle
+                setTimeout(() => {
+                    if (typeof window.initGame === 'function') {
+                        window.initGame();
+                        console.log('Golf game initialization triggered and starting');
+                    } else {
+                        console.error('initGame function not found - check script loading order');
+                    }
+                }, 200); // Increased delay to ensure DOM is fully ready
+            });
+
+            // Verify script loading
+            if (typeof window.initGame === 'undefined') {
+                console.error('Golf game script not loaded properly');
+            } else {
+                console.log('Golf game script loaded and ready');
+            }
+        });
+    </script>
 
 </body>
 </html>
