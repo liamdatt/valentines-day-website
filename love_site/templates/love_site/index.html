@@ -138,7 +138,7 @@
         <div class="activity" onclick="window.openVideo(); return false;">Liam and Vritti</div>
         <div class="activity" onclick="window.openWordGame(); return false;">Word Game</div>
         <div class="activity" onclick="window.openWordle(); return false;">Wordle</div>
-        <div class="activity" id="golf-button">Golf Game</div>
+        <div class="activity" onclick="window.openGolf()">Golf Game</div>
     </div>
     
     <!-- Game container for "Catch Me Game" -->
@@ -429,83 +429,19 @@
     }
     </style>
 
-    <!-- Add this before the script.js include -->
-    <script>
-        // Define video functions globally
-        function openVideo() {
-            const popup = document.getElementById('video-popup');
-            const video = document.getElementById('couple-video');
-            if (popup && video) {
-                popup.style.display = 'flex';
-            }
-        }
-
-        function closeVideo() {
-            const popup = document.getElementById('video-popup');
-            const video = document.getElementById('couple-video');
-            if (popup && video) {
-                popup.style.display = 'none';
-                video.pause();
-                video.currentTime = 0;
-            }
-        }
-
-        // Add click outside to close
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoPopup = document.getElementById('video-popup');
-            if (videoPopup) {
-                videoPopup.addEventListener('click', function(e) {
-                    if (e.target === videoPopup) {
-                        closeVideo();
-                    }
-                });
-            }
-        });
-    </script>
-
     <!-- Move all script tags to the end of body and ensure proper order -->
     <script src="{% static 'js/script.js' %}?v=2"></script>
     <script src="{% static 'js/word_game.js' %}?v=1"></script>
     <script src="{% static 'js/wordle.js' %}?v=1"></script>
-    <script src="{% static 'js/golf.js' %}?v=8"></script>
+    <script src="{% static 'js/golf.js' %}?v=14"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const golfButton = document.getElementById('golf-button');
-            if (!golfButton) {
-                console.error('Golf button not found');
-                return;
-            }
-
-            // Clean up any existing game state
-            if (typeof window.cleanupGolf === 'function') {
-                window.cleanupGolf();
-            }
-
-            golfButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                const popup = document.getElementById('golf-popup');
-                if (!popup) {
-                    console.error('Golf popup not found');
-                    return;
-                }
-
-                popup.style.display = 'flex';
-                // Wait for the popup to be visible and DOM to settle
-                setTimeout(() => {
-                    if (typeof window.initGame === 'function') {
-                        window.initGame();
-                        console.log('Golf game initialization triggered and starting');
-                    } else {
-                        console.error('initGame function not found - check script loading order');
-                    }
-                }, 200); // Increased delay to ensure DOM is fully ready
-            });
-
-            // Verify script loading
-            if (typeof window.initGame === 'undefined') {
-                console.error('Golf game script not loaded properly');
+        // Verify all game functions are loaded
+        window.addEventListener('load', function() {
+            console.log('Checking game functions...');
+            if (typeof window.openGolf === 'function') {
+                console.log('Golf game functions loaded successfully');
             } else {
-                console.log('Golf game script loaded and ready');
+                console.error('Golf game functions not loaded');
             }
         });
     </script>
